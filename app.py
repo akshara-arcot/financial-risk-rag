@@ -8,8 +8,8 @@ from openai import OpenAI
 #----------------------------------
 # SETTINGS
 #----------------------------------
-FAISS_PATH = "index/faiss.index"
-CHUNKS_PATH = "index/chunks.pkl"
+FAISS_PATH = "faiss.index"
+CHUNKS_PATH = "chunks.pkl"
 EMBED_MODEL = "all-MiniLM-L6-v2"
 TOP_K = 3
 
