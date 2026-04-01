@@ -42,7 +42,7 @@ def load_embed_model():
 #----------------------------------
 # HELPER FUNCTIONS
 #---------------------------------- 
-def retrieve_text(query,k=5):
+def retrieve_text(query,k=TOP_K):
 
   query_vector = embedding_model.encode([query]).astype("float32")
   distances, indices = index.search(query_vector,k)
@@ -61,7 +61,7 @@ def retrieve_text(query,k=5):
       context_parts.append(f"Source: {source}\nPage: {page} \n{doc["chunk_text"]}")
   return context_parts
 
-def ask_query(query, k):
+def ask_query(query, k=TOP_K):
   
   # Retrieve relevant chunks from the FAISS index
   retrieved_chunks = retrieve_text(query,k)
@@ -118,7 +118,7 @@ question = st.text_input("Enter your question:")
 if st.button("Ask"):
   if question.strip():
     with st.spinner("Generating answer..."):
-      answer = ask_query(question,k=3)
+      answer = ask_query(question)
     st.text(answer)
     
 
