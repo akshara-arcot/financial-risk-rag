@@ -53,12 +53,12 @@ def retrieve_text(query,k=TOP_K):
     results.append(chunks[i])
   return results
   
-  def get_context(query_result):
-    context_parts = []
-    for doc in query_result:
-      source = doc["source"]
-      page = doc["page"]
-      context_parts.append(f"Source: {source}\nPage: {page} \n{doc["chunk_text"]}")
+def get_context(query_result):
+  context_parts = []
+  for doc in query_result:
+    source = doc["source"]
+    page = doc["page"]
+    context_parts.append(f"Source: {source}\nPage: {page} \n{doc["chunk_text"]}")
   return context_parts
 
 def ask_query(query, k=TOP_K):
