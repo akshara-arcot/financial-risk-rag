@@ -44,7 +44,7 @@ def load_embed_model():
 #---------------------------------- 
 def retrieve_text(query,k=TOP_K):
 
-  query_vector = embedding_model.encode([query]).astype("float32")
+  query_vector = embed_model.encode([query]).astype("float32")
   distances, indices = index.search(query_vector,k)
 
   results=[]
