@@ -118,7 +118,7 @@ question = st.text_input("Enter your question:")
 if st.button("Ask"):
   if question.strip():
     with st.spinner("Generating answer..."):
-      answer = ask_question(question)
+      answer = ask_query(question,k=3)
     st.text(answer)
     
 
