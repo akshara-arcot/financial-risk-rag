@@ -37,7 +37,7 @@ def load_embed_model():
 
   index = load_index()
   chunked_docs = load_chunks()
-  embed_model == load_embed_model()
+  embed_model = load_embed_model()
 
 #----------------------------------
 # HELPER FUNCTIONS
