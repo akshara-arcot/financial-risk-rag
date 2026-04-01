@@ -36,7 +36,7 @@ def load_embed_model():
   return SentenceTransformer(EMBED_MODEL)
 
   index = load_index()
-  chunked_docs = load_chunks()
+  chunks = load_chunks()
   embed_model = load_embed_model()
 
 #----------------------------------
