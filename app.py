@@ -119,7 +119,8 @@ question = st.text_input("Enter your question:")
 if st.button("Ask"):
   if question.strip():
     with st.spinner("Generating answer..."):
-      answer = ask_query(question)
+      answer, retrieved_chunks = ask_query(question)
+    st.subheader("Answer")
     st.text(answer)
     
 
