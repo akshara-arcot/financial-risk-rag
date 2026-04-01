@@ -35,9 +35,9 @@ def load_chunks():
 def load_embed_model():
   return SentenceTransformer(EMBED_MODEL)
 
-  index = load_index()
-  chunks = load_chunks()
-  embed_model = load_embed_model()
+index = load_index()
+chunks = load_chunks()
+embed_model = load_embed_model()
 
 #----------------------------------
 # HELPER FUNCTIONS
