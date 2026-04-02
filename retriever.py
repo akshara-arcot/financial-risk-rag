@@ -1,4 +1,7 @@
-
+import faiss
+import pickle
+from sentence_transformers import SentenceTransformer
+from config import *
 
 #----------------------------------
 # LOAD SAVED FILES
@@ -22,7 +25,7 @@ chunks = load_chunks()
 embed_model = load_embed_model()
 
 #----------------------------------
-# HELPER FUNCTIONS
+# HELPER FUNCTION
 #---------------------------------- 
 def retrieve_text(query,k=TOP_K):
 
