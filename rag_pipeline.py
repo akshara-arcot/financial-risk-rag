@@ -3,8 +3,14 @@ from retriever import retrieve_text
 import streamlit as st
 from openai import OpenAI
 
+#----------------------------------
+# LOAD OPENAI KEY
+#----------------------------------
+client = OpenAI(api_key=st.secrets["OPEN_API_KEY"])
 
-
+#----------------------------------
+# HELPER FUNCTIONS
+#----------------------------------
 
 def get_context(query_result):
   context_parts = []
