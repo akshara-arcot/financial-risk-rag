@@ -1,5 +1,5 @@
 import streamlit as st
-from rag_pipeline import generate_response
+from rag_pipeline import ask_query
 
 #----------------------------------
 # STREAMLIT UI
