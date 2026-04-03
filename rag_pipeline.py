@@ -8,9 +8,9 @@ import os
 #----------------------------------
 try:
   import streamlit as st
-  api_key = os.getenv("OPENAI_API_KEY") or st.secrets["OPENAI_API_KEY"]
+  api_key = os.getenv("OPEN_API_KEY") or st.secrets["OPENAI_API_KEY"]
 except:
-  api_key = os.getenv("OPENAI_API_KEY")
+  api_key = os.getenv("OPEN_API_KEY")
 client = OpenAI(api_key = api_key)
 #----------------------------------
 # HELPER FUNCTIONS
