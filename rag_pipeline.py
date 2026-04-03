@@ -1,6 +1,7 @@
 from config import *
 from retriever import retrieve_text
 from openai import OpenAI
+import os
 
 #----------------------------------
 # LOAD OPENAI KEY
