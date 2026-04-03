@@ -1,12 +1,15 @@
 from config import *
 from retriever import retrieve_text
-import streamlit as st
 from openai import OpenAI
 
 #----------------------------------
 # LOAD OPENAI KEY
 #----------------------------------
-api_key = os.getenv("OPEN_API_KEY") or st.secrets["OPEN_API_KEY"]
+try:
+  import streamlit as st
+  api_key = os.getenv("OPEN_API_KEY") or st.secrets["OPEN_API_KEY"]
+except:
+  api_key = os.getenv("OPEN_API_KEY")
 client = OpenAI(api_key = api_key)
 #----------------------------------
 # HELPER FUNCTIONS
