@@ -6,8 +6,8 @@ from openai import OpenAI
 #----------------------------------
 # LOAD OPENAI KEY
 #----------------------------------
-client = OpenAI(api_key=st.secrets["OPEN_API_KEY"])
-
+api_key = os.getenv("OPEN_API_KEY") or st.secrets["OPEN_API_KEY"]
+client = OpenAI(api_key = api_key)
 #----------------------------------
 # HELPER FUNCTIONS
 #----------------------------------
@@ -17,7 +17,7 @@ def get_context(query_result):
   for doc in query_result:
     source = doc["source"]
     page = doc["page"]
-    context_parts.append(f"Source: {source}\nPage: {page} \n{doc["chunk_text"]}")
+    context_parts.append(f"Source: {source}\nPage: {page} \n{doc['chunk_text']}")
   return context_parts
 
 def ask_query(query, k=TOP_K):
