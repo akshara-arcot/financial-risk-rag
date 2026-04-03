@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from rag_pipelie import ask_query
+from rag_pipeline import ask_query
 
 app = FastAPI(title = "Financial Risk RAG API")
 
